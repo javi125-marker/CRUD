@@ -1,16 +1,21 @@
-﻿@model CRUD.Models.ViewModels.ClienteViewModel
+﻿
+@model CRUD.Models.ViewModels.ClienteViewModel
 
 @{
-    ViewBag.Title = "Agregar un Cliente";
+    ViewBag.Title = "Editar un Cliente";
 }
 
 <h2>@ViewBag.Title</h2>
 
-@using (Html.BeginForm("Nuevo", "cliente", FormMethod.Post))
- {
+@using (Html.BeginForm("Editar", "cliente", FormMethod.Post))
+{
     <div class="row">
 
         <div class="col-md-12">
+
+            <!--Elemento oculto para poder obtener el id del cliente-->
+            @Html.HiddenFor(d => d.id_cli)
+
             <!--Manejo de Helpers-->
             <div>
                 @Html.LabelFor(d => d.nombre_cli)
@@ -39,8 +44,8 @@
             <br />
 
             <div>
-                <input value="Guardar" class="btn btn-primary" type="submit" />
+                <input value="Editar" class="btn btn-primary" type="submit" />
             </div>
         </div>
     </div>
- }
+}

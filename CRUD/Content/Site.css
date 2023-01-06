@@ -28,3 +28,9 @@ textarea {
     background-color: #777;
     border-color: #fff
 }
+
+/*Creación de la clase red para las validaciones del formulario*/
+
+.red{
+    color: red;
+}
