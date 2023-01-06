@@ -1,0 +1,28 @@
+﻿@model CRUD.Models.ViewModels.ClienteViewModel
+
+@{
+    ViewBag.Title = "Agregar un Cliente";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Nuevo", "cliente", FormMethod.Post))
+ {
+    <div class="row">
+
+        <div class="col-md-12">
+            <!--Manejo de Helpers-->
+            @Html.LabelFor(d => d.nombre_cli)
+            @Html.TextBoxFor(d => d.nombre_cli, "", new { @class = "form-control" })
+
+            @Html.LabelFor(d => d.cedula_cli)
+            @Html.TextBoxFor(d => d.cedula_cli, "", new { @class = "form-control" })
+
+            @Html.LabelFor(d => d.correo_cli)
+            @Html.TextBoxFor(d => d.correo_cli, "", new { @class = "form-control" })
+
+            @Html.LabelFor(d => d.fechaNacimiento_cli)
+            @Html.EditorFor(d => d.fechaNacimiento_cli, "", new { @class = "form-control" })
+        </div>
+    </div>
+ }
